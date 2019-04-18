@@ -68,6 +68,8 @@ RUN set -ex; \
     /docker/waitonprocess.sh wineserver; \
     winetricks --unattended dotnet40; \
     /docker/waitonprocess.sh wineserver
+    winetricks --unattended vcrun2015; \
+    /docker/waitonprocess.sh wineserver
 
 USER root
 COPY run_mt.sh screenshot.sh /docker/
